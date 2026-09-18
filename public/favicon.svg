@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="4" y="18" width="24" height="4" rx="2" fill="#006CCE"/>
+  <rect x="14" y="6" width="4" height="12" rx="2" fill="#006CCE"/>
+  <circle cx="16" cy="6" r="5" fill="#BEE1FF" stroke="#006CCE" stroke-width="1.5"/>
+  <text x="16" y="9" text-anchor="middle" fill="#006CCE" font-size="6" font-weight="bold">KG</text>
+</svg>

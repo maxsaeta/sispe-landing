@@ -1,0 +1,354 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="SISPE - Sistema de Pesaje Electrónico">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo">
+        <img src="/MASTER_SCALE_64.bmp" alt="SISPE" />
+      </div>
+      <h1>Sistema de Pesaje Electrónico</h1>
+      <p class="tagline">Control inteligente para romanas y básculas industriales</p>
+      <div class="hero-btns">
+        <a href="#manual" class="btn btn-primary">Manual de Uso</a>
+        <a href="#preguntas" class="btn btn-outline">Preguntas Frecuentes</a>
+      </div>
+    </div>
+    <div class="hero-graphic">
+      <img src="/entrada.bmp" alt="Pantalla de acceso SISPE" class="hero-img" />
+    </div>
+  </header>
+
+  <!-- FUNCIONES -->
+  <section class="features" id="funciones">
+    <h2>Funciones Principales</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="/Imagenes/Pantalla Principal.png" alt="Pantalla Principal" class="card-img" />
+        <h3>Pesaje en Tiempo Real</h3>
+        <p>Lectura directa del indicador de peso por puerto serial con actualización instantánea en pantalla.</p>
+      </div>
+      <div class="card">
+        <img src="/Imagenes/Entrada de Vehiculos.png" alt="Entrada de Vehículos" class="card-img" />
+        <h3>Control de Boletos</h3>
+        <p>Registro de entrada y salida con control de placas, proveedores, clientes y transportistas.</p>
+      </div>
+      <div class="card">
+        <img src="/Imagenes/Salida de Vehiculos.png" alt="Salida de Vehículos" class="card-img" />
+        <h3>Impresión Configurable</h3>
+        <p>Formatos de impresión personalizables con archivos .fto, sin necesidad de recompilar.</p>
+      </div>
+      <div class="card">
+        <img src="/Imagenes/Reportes.png" alt="Reportes" class="card-img" />
+        <h3>Reportes</h3>
+        <p>Generación de reportes por fecha, proveedor, producto y cliente con exportación a múltiples formatos.</p>
+      </div>
+      <div class="card">
+        <img src="/Imagenes/Configuracion.png" alt="Configuración" class="card-img" />
+        <h3>Configuración Flexible</h3>
+        <p>Parámetros ajustables desde interfaz: puerto serial, impresora, densidad, formato de impresión.</p>
+      </div>
+      <div class="card">
+        <img src="/Imagenes/Configuracion de accesos.png" alt="Control de Acceso" class="card-img" />
+        <h3>Control de Acceso</h3>
+        <p>Sistema de usuarios con permisos diferenciados para operadores y administradores.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTES -->
+  <section class="reports" id="reportes">
+    <h2>Reportes Disponibles</h2>
+    <div class="grid">
+      <div class="report-card">
+        <img src="/Imagenes/Reportes.png" alt="Reportes" class="report-img" />
+        <h3>Reporte de Entradas</h3>
+        <p>Listado de todos los boletos de entrada con fecha, hora, placa, proveedor y peso registrado.</p>
+        <span class="badge">Entrada</span>
+      </div>
+      <div class="report-card">
+        <img src="/Imagenes/Reportes.png" alt="Reportes" class="report-img" />
+        <h3>Reporte de Salidas</h3>
+        <p>Control de vehículos con peso de entrada, tara y peso neto calculado automáticamente.</p>
+        <span class="badge badge-green">Salida</span>
+      </div>
+      <div class="report-card">
+        <img src="/Imagenes/Reportes.png" alt="Reportes" class="report-img" />
+        <h3>Reporte por Proveedor</h3>
+        <p>Consolidado de movimientos agrupados por proveedor con totales de peso y cantidad.</p>
+        <span class="badge badge-orange">Proveedor</span>
+      </div>
+      <div class="report-card">
+        <img src="/Imagenes/Reportes.png" alt="Reportes" class="report-img" />
+        <h3>Reporte por Producto</h3>
+        <p>Análisis de materiales pesados con densidad, cantidades y promedios por producto.</p>
+        <span class="badge badge-purple">Producto</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS -->
+  <section class="faq" id="preguntas">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-list">
+      <details>
+        <summary>¿Qué hardware necesito para usar SISPE?</summary>
+        <p>SISPE requiere una PC con Windows, un indicador de peso conectado por puerto serial (COM1/COM2) y una impresora para generar boletos. El indicador compatible envía datos en formato ASCII con terminador LF.</p>
+      </details>
+      <details>
+        <summary>¿Cómo se configura el puerto serial?</summary>
+        <p>La configuración se realiza en el archivo <code>Config.ini</code> bajo la sección [CONFIGURACION]. Los parámetros incluyen puerto COM, baudios (9600), bits de datos (8), paridad (N) y bits de parada (1).</p>
+      </details>
+      <details>
+        <summary>¿Qué formatos de impresión soporta?</summary>
+        <p>SISPE utiliza archivos .fto que definen la plantilla de impresión. El formato incluye expresiones, funciones de alineación y ancho de columna. Se puede configurar sin recompilar el programa.</p>
+      </details>
+      <details>
+        <summary>¿Puedo usar toneladas en lugar de kilogramos?</summary>
+        <p>Sí. En la configuración, establezca <code>lKilo=.T.</code> para kilogramos o <code>lKilo=.F.</code> para toneladas. El sistema ajusta automáticamente los decimales y la imagen de la pantalla.</p>
+      </details>
+      <details>
+        <summary>¿Cómo funciona la densidad?</summary>
+        <p>La densidad se usa para convertir entre peso y volumen. Configure <code>lDensidad=.T.</code> y establezca el valor en <code>nDensity</code>. El sistema calcula automáticamente litros a partir del peso.</p>
+      </details>
+      <details>
+        <summary>¿Qué es el ajuste de peso?</summary>
+        <p>El ajuste permite modificar el peso registrado después de la lectura inicial. Se almacena como un valor separado en la base de datos para auditoría.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- MANUAL -->
+  <section class="manual" id="manual">
+    <h2>Manual Básico de Uso</h2>
+    <div class="manual-content">
+      <div class="manual-step">
+        <div class="step-number">1</div>
+        <div class="step-text">
+          <h3>Acceso al Programa</h3>
+          <p>Ejecute el archivo <code>sispe.exe</code>. Ingrese su credencial de usuario y contraseña para acceder al sistema.</p>
+        </div>
+        <img src="/Imagenes/Acceso Al Programa.png" alt="Acceso al Programa" class="step-img" />
+      </div>
+      <div class="manual-step">
+        <div class="step-number">2</div>
+        <div class="step-text">
+          <h3>Pantalla Principal</h3>
+          <p>La pantalla muestra el peso en tiempo real del indicador conectado. Utilice los botones laterales para registrar entradas, salidas, reportes y configuración.</p>
+        </div>
+        <img src="/Imagenes/Pantalla Principal.png" alt="Pantalla Principal" class="step-img" />
+      </div>
+      <div class="manual-step">
+        <div class="step-number">3</div>
+        <div class="step-text">
+          <h3>Registrar Entrada</h3>
+          <p>Seleccione "Entrada" e ingrese los datos del vehículo: placa, producto, proveedor, cliente y transportista. El peso se captura automáticamente del indicador.</p>
+        </div>
+        <img src="/Imagenes/Entrada de Vehiculos.png" alt="Entrada de Vehículos" class="step-img" />
+      </div>
+      <div class="manual-step">
+        <div class="step-number">4</div>
+        <div class="step-text">
+          <h3>Registrar Salida</h3>
+          <p>Al regresar el vehículo, seleccione "Salida" e ingrese la placa. El sistema muestra el peso de entrada y calcula el peso neto automáticamente.</p>
+        </div>
+        <img src="/Imagenes/Salida de Vehiculos.png" alt="Salida de Vehículos" class="step-img" />
+      </div>
+      <div class="manual-step">
+        <div class="step-number">5</div>
+        <div class="step-text">
+          <h3>Imprimir Boleto</h3>
+          <p>La impresión se realiza automáticamente al registrar el boleto. El formato se define en el archivo .fto configurado en <code>cFormato</code>.</p>
+        </div>
+        <img src="/Imagenes/Adicion, modificacion y reimpresion de boletos.png" alt="Boletos" class="step-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>SISPE - Sistema de Pesaje Electrónico</p>
+  </footer>
+
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90vh;
+    padding: 2rem 6%;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    color: var(--white);
+    gap: 2rem;
+  }
+
+  .hero-content { max-width: 55%; }
+  .logo img { height: 80px; margin-bottom: 1rem; }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; }
+
+  .btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+  .btn-primary { background: var(--white); color: var(--blue); }
+  .btn-outline { border: 2px solid var(--white); color: var(--white); }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+  .hero-graphic { flex-shrink: 0; }
+  .hero-img { max-width: 400px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+
+  /* FEATURES */
+  .features { padding: 5rem 6%; text-align: center; }
+  .features h2, .reports h2, .faq h2, .manual h2 {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 2.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: left;
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-4px); }
+
+  .card-img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; }
+  .card h3 { color: var(--blue); margin-bottom: 0.5rem; }
+
+  /* REPORTS */
+  .reports { padding: 5rem 6%; background: var(--bg-light); text-align: center; }
+
+  .report-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .report-img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; }
+
+  .badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--bg-light);
+    color: var(--blue);
+  }
+  .badge-green { background: #d4edda; color: #155724; }
+  .badge-orange { background: #fff3cd; color: #856404; }
+  .badge-purple { background: #e8d5f5; color: #5b2c8a; }
+
+  /* FAQ */
+  .faq { padding: 5rem 6%; max-width: 800px; margin: 0 auto; }
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  details {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  summary {
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--blue);
+    list-style: none;
+  }
+  summary::before { content: '▸ '; }
+  details[open] summary::before { content: '▾ '; }
+
+  details p { padding: 0 1.5rem 1.2rem; color: var(--text-dark); }
+  details code { background: var(--bg-light); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+
+  /* MANUAL */
+  .manual { padding: 5rem 6%; background: var(--bg-light); }
+  .manual-content { max-width: 700px; margin: 0 auto; }
+
+  .manual-step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .step-text { flex: 1; }
+  .step-img { width: 280px; height: auto; border-radius: 8px; flex-shrink: 0; }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .manual-step h3 { color: var(--blue); margin-bottom: 0.5rem; }
+  .manual-step code { background: var(--bg-light); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--blue-dark);
+    color: var(--white);
+  }
+
+  @media (max-width: 768px) {
+    .hero { flex-direction: column; text-align: center; padding-top: 3rem; }
+    .hero-content { max-width: 100%; }
+    .hero-btns { justify-content: center; }
+    .hero h1 { font-size: 2rem; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>

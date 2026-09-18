@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="SISPE - Sistema de Pesaje Electrónico">
+<Layout title="SISPE - Control de Inventario de Materiales a Granel">
 
   <!-- HERO -->
   <header class="hero">
@@ -10,8 +10,8 @@ import Layout from '../layouts/Layout.astro';
       <div class="logo">
         <img src="/MASTER_SCALE_64.bmp" alt="SISPE" />
       </div>
-      <h1>Sistema de Pesaje Electrónico</h1>
-      <p class="tagline">Control inteligente para romanas y básculas industriales</p>
+      <h1>Control de Inventario de Materiales a Granel</h1>
+      <p class="tagline">Peso exacto. Inventario preciso. Cero sorpresas.</p>
       <div class="hero-btns">
         <a href="#manual" class="btn btn-primary">Manual de Uso</a>
         <a href="#contacto" class="btn btn-outline">Contacto</a>
@@ -24,44 +24,44 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- FUNCIONES -->
   <section class="features" id="funciones">
-    <h2>Funciones Principales</h2>
+    <h2>Qué controlas con SISPE</h2>
     <div class="grid">
       <div class="card">
         <img src="/Imagenes/Pantalla Principal.png" alt="Pantalla Principal" class="card-img" />
-        <h3>Pesaje en Tiempo Real</h3>
-        <p>Lectura directa del indicador de peso por puerto serial con actualización instantánea en pantalla.</p>
+        <h3>Peso en tiempo real</h3>
+        <p>Cada kilo registrado al instante desde la báscula.</p>
       </div>
       <div class="card">
         <img src="/Imagenes/Entrada de Vehiculos.png" alt="Entrada de Vehículos" class="card-img" />
-        <h3>Control de Boletos</h3>
-        <p>Registro de entrada y salida con control de placas, proveedores, clientes y transportistas.</p>
+        <h3>Trazabilidad completa</h3>
+        <p>Placa, proveedor, producto y peso: todo registrado.</p>
       </div>
       <div class="card">
         <img src="/Imagenes/Salida de Vehiculos.png" alt="Salida de Vehículos" class="card-img" />
-        <h3>Impresión Configurable</h3>
-        <p>Formatos de impresión personalizables con archivos .fto, sin necesidad de recompilar.</p>
+        <h3>Boletos a tu medida</h3>
+        <p>Formatos personalizables sin necesidad de recompilar.</p>
       </div>
       <div class="card">
         <img src="/Imagenes/Reportes.png" alt="Reportes" class="card-img" />
-        <h3>Reportes</h3>
-        <p>Generación de reportes por fecha, proveedor, producto y cliente con exportación a múltiples formatos.</p>
+        <h3>Reportes inteligentes</h3>
+        <p>Por fecha, proveedor, producto y cliente con exportación a múltiples formatos.</p>
       </div>
       <div class="card">
         <img src="/Imagenes/Configuracion.png" alt="Configuración" class="card-img" />
-        <h3>Configuración Flexible</h3>
-        <p>Parámetros ajustables desde interfaz: puerto serial, impresora, densidad, formato de impresión.</p>
+        <h3>Configuración sin complicaciones</h3>
+        <p>Ajuste puerto serial, impresora, densidad y formato desde la interfaz.</p>
       </div>
       <div class="card">
         <img src="/Imagenes/Configuracion de accesos.png" alt="Control de Acceso" class="card-img" />
-        <h3>Control de Acceso</h3>
-        <p>Sistema de usuarios con permisos diferenciados para operadores y administradores.</p>
+        <h3>Perfiles de usuario</h3>
+        <p>Permisos diferenciados para operadores y administradores.</p>
       </div>
     </div>
   </section>
 
   <!-- REPORTES -->
   <section class="reports" id="reportes">
-    <h2>Reportes Disponibles</h2>
+    <h2>Tu inventario, siempre visible</h2>
     <div class="grid">
       <div class="report-card">
         <img src="/Imagenes/Reportes.png" alt="Reportes" class="report-img" />
@@ -85,37 +85,37 @@ import Layout from '../layouts/Layout.astro';
         <img src="/Imagenes/Reportes.png" alt="Reportes" class="report-img" />
         <h3>Reporte por Producto</h3>
         <p>Análisis de materiales pesados con densidad, cantidades y promedios por producto.</p>
-        <span class="badge badge-purple">Producto</span>
+        <span class="badge badge-purple">Material</span>
       </div>
     </div>
   </section>
 
   <!-- PREGUNTAS -->
   <section class="faq" id="preguntas">
-    <h2>Preguntas Frecuentes</h2>
+    <h2>Dudas comunes</h2>
     <div class="faq-list">
       <details>
-        <summary>¿Qué hardware necesito para usar SISPE?</summary>
+        <summary>¿Qué necesito para empezar?</summary>
         <p>SISPE requiere una PC con Windows, un indicador de peso conectado por puerto serial (COM1/COM2) y una impresora para generar boletos. El indicador compatible envía datos en formato ASCII con terminador LF.</p>
       </details>
       <details>
-        <summary>¿Cómo se configura el puerto serial?</summary>
+        <summary>¿Cómo conecto la báscula?</summary>
         <p>La configuración se realiza en el archivo <code>Config.ini</code> bajo la sección [CONFIGURACION]. Los parámetros incluyen puerto COM, baudios (9600), bits de datos (8), paridad (N) y bits de parada (1).</p>
       </details>
       <details>
-        <summary>¿Qué formatos de impresión soporta?</summary>
+        <summary>¿Puedo personalizar los boletos?</summary>
         <p>SISPE utiliza archivos .fto que definen la plantilla de impresión. El formato incluye expresiones, funciones de alineación y ancho de columna. Se puede configurar sin recompilar el programa.</p>
       </details>
       <details>
-        <summary>¿Puedo usar toneladas en lugar de kilogramos?</summary>
+        <summary>¿Trabaja con toneladas?</summary>
         <p>Sí. En la configuración, establezca <code>lKilo=.T.</code> para kilogramos o <code>lKilo=.F.</code> para toneladas. El sistema ajusta automáticamente los decimales y la imagen de la pantalla.</p>
       </details>
       <details>
-        <summary>¿Cómo funciona la densidad?</summary>
+        <summary>¿Cómo maneja volumen y peso?</summary>
         <p>La densidad se usa para convertir entre peso y volumen. Configure <code>lDensidad=.T.</code> y establezca el valor en <code>nDensity</code>. El sistema calcula automáticamente litros a partir del peso.</p>
       </details>
       <details>
-        <summary>¿Qué es el ajuste de peso?</summary>
+        <summary>¿Puedo corregir un peso registrado?</summary>
         <p>El ajuste permite modificar el peso registrado después de la lectura inicial. Se almacena como un valor separado en la base de datos para auditoría.</p>
       </details>
     </div>
@@ -123,7 +123,7 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- MANUAL -->
   <section class="manual" id="manual">
-    <h2>Manual Básico de Uso</h2>
+    <h2>Cómo funciona en 5 pasos</h2>
     <div class="manual-content">
       <div class="manual-step">
         <div class="step-number">1</div>
@@ -206,7 +206,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="dev-tagline">Team Desarrollador</p>
         </div>
       </div>
-      <p class="footer-copy">SISPE - Sistema de Pesaje Electrónico &copy; 2026</p>
+      <p class="footer-copy">SISPE - Control de Inventario de Materiales a Granel &copy; 2026</p>
     </div>
   </footer>
 
